@@ -1,0 +1,6 @@
+[package]
+description = Additional seen-triggers for Bro's intelligence framework.
+tags = intel, seen
+script_dir = scripts
+suggests =
+	bro/sethhall/domain-tld *
