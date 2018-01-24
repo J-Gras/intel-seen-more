@@ -1,5 +1,5 @@
 #
-# @TEST-EXEC: bro -C -r $TRACES/wikipedia.trace ../../../scripts/ %INPUT
+# @TEST-EXEC: bro -C -r $TRACES/wikipedia.trace ../../../scripts/seen/udp %INPUT
 # @TEST-EXEC: btest-diff intel.log
 
 # @TEST-START-FILE intel.dat

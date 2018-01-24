@@ -1,5 +1,5 @@
 #
-# @TEST-EXEC: bro -C -r $TRACES/wikipedia.trace ../../../scripts/ %INPUT
+# @TEST-EXEC: bro -C -r $TRACES/wikipedia.trace %INPUT ../../../scripts/seen/effective-dns
 # @TEST-EXEC: btest-diff intel.log
 
 # @TEST-START-FILE intel.dat
@@ -9,7 +9,8 @@ meta.wikimedia.org	Intel::DOMAIN	source1	this domain bad	http://some-data-distri
 wikimedia.org	Intel::EFFECTIVE_DOMAIN	source1	this domain bad	http://some-data-distributor.com/1
 # @TEST-END-FILE
 
+@load packages
+
 # Load default seen scripts
 @load frameworks/intel/seen
-
 redef Intel::read_files += { "intel.dat" };
