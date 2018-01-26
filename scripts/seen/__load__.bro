@@ -12,3 +12,4 @@ event bro_init()
 @endif
 
 @load ./udp
+@load ./conn-tcp
