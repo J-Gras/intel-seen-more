@@ -4,6 +4,8 @@ This package provides additional seen scripts for Bro's intelligence framework. 
 
  * `udp`: Sees originator and responder of UDP connections. **Note:** The script uses the potentially expensive event `new_connection`.
 
+ * `icmp-ping`: Sees originator and responder of ICMP echo requests and replies. **Note:** The script uses potentially expensive events.
+
  * `effective_dns`: Introduces the `Intel::EFFECTIVE_DOMAIN` indicator type for effective domains. For example "wikipedia.org" will match "www.wikipedia.org" and other subdomains. **Note:** The scripts require the DomainTLD package.
 
  * `conn-tcp`: Introduces the `Intel::CONN_TCP` indicator type supporting `<IP>:<Port>` indicators for *established* TCP connections.
