@@ -1,5 +1,5 @@
 #
-# @TEST-EXEC: bro -C -r $TRACES/wikipedia.trace ../../../scripts/seen/conn-tcp %INPUT
+# @TEST-EXEC: zeek -C -r $TRACES/wikipedia.trace ../../../scripts/seen/conn-tcp %INPUT
 # @TEST-EXEC: btest-diff intel.log
 
 # @TEST-START-FILE intel.dat
@@ -13,3 +13,14 @@
 # Load default seen scripts
 @load frameworks/intel/seen
 redef Intel::read_files += { "intel.dat" };
+
+event zeek_init()
+	{
+	suspend_processing();
+	}
+
+event Input::end_of_data(name: string, source: string)
+	{
+	if ( name[:6] == "intel-" )
+		continue_processing();
+	}

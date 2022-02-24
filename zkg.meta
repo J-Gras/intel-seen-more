@@ -1,6 +1,8 @@
 [package]
-description = Additional seen-triggers for Bro's intelligence framework.
+description = Additional seen-triggers for Zeek's intelligence framework.
 tags = intel, seen
 script_dir = scripts
+depends =
+  zeek >=3.2
 suggests =
   sethhall/domain-tld *
